@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Planit</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div id="app">
+    <aside id="sidebar">
+      <div class="brand">
+        <img class="brand-mark" src="../assets/icon.png" alt="Planit logo" />
+        <div class="brand-name">Planit</div>
+      </div>
+      <nav>
+        <button class="nav-btn active" data-view="calendar" title="Calendar">
+          <span class="nav-ico">&#128197;</span><span>Calendar</span>
+        </button>
+        <button class="nav-btn" data-view="polls" title="Polls">
+          <span class="nav-ico">&#128499;</span><span>Polls</span>
+        </button>
+        <button class="nav-btn" data-view="group" title="Group">
+          <span class="nav-ico">&#128101;</span><span>Group</span>
+        </button>
+        <button class="nav-btn" data-view="mail" title="Mail">
+          <span class="nav-ico">&#9993;</span><span>Mail</span>
+        </button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div id="account-chip" class="account-chip hidden">
+          <div id="account-avatar" class="avatar">?</div>
+          <div class="account-meta">
+            <div id="account-name">Not signed in</div>
+            <div id="account-mail"></div>
+          </div>
+        </div>
+        <div id="demo-banner" class="demo-banner hidden">Demo mode — sample data</div>
+        <button class="nav-btn" data-view="settings" title="Settings">
+          <span class="nav-ico">&#9881;</span><span>Settings</span>
+        </button>
+      </div>
+    </aside>
+
+    <main id="main">
+      <section id="view-calendar" class="view active"></section>
+      <section id="view-polls" class="view"></section>
+      <section id="view-group" class="view"></section>
+      <section id="view-mail" class="view"></section>
+      <section id="view-settings" class="view"></section>
+    </main>
+  </div>
+
+  <div id="modal-root" class="hidden">
+    <div id="modal-backdrop"></div>
+    <div id="modal-card"></div>
+  </div>
+  <div id="toast" class="hidden"></div>
+
+  <script src="demo.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

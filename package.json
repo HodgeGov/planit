@@ -1,0 +1,49 @@
+{
+  "name": "planit",
+  "productName": "Planit",
+  "version": "1.1.0",
+  "description": "Calendar planner with Doodle-style group scheduling and Microsoft 365 integration",
+  "main": "src/main.js",
+  "author": "TJ Hodge",
+  "license": "MIT",
+  "scripts": {
+    "start": "electron .",
+    "dist": "electron-builder",
+    "release": "electron-builder --win --publish always"
+  },
+  "devDependencies": {
+    "electron": "^31.0.0",
+    "electron-builder": "^24.13.3"
+  },
+  "dependencies": {
+    "@azure/msal-node": "^2.9.2",
+    "electron-updater": "^6.8.9"
+  },
+  "build": {
+    "appId": "com.tjhodge.planit",
+    "productName": "Planit",
+    "publish": {
+      "provider": "github",
+      "owner": "HodgeGov",
+      "repo": "planit"
+    },
+    "files": [
+      "src/**/*",
+      "renderer/**/*",
+      "assets/**/*",
+      "package.json"
+    ],
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.png"
+    },
+    "mac": {
+      "target": "dmg",
+      "icon": "assets/icon.png"
+    },
+    "linux": {
+      "target": "AppImage",
+      "icon": "assets/icon.png"
+    }
+  }
+}
